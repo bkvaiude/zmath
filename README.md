@@ -9,6 +9,7 @@
 1. `from` accepts the chain of folders like `from zmath.extras.multiply` but you can't do following `zmath.extras.multiply.multiply(1, 2)`
 1. In order to work with submodules, you need to add them as `git submodule add https://github.com/bkvaiude/zmathsquare.git zmathsquare`
 python setup.py sdist bdist_wheel
+1. `git submodule add --name zmathsquare https://github.com/bkvaiude/zmathsquare.git zmathsquare`
 
 Approach 1
 
