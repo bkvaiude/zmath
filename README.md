@@ -28,7 +28,11 @@ python setup.py sdist bdist_wheel
     1. rm -rf zmathsquare
     1. rm -rf .git/modules/zmathsquare
     1. git rm --cached zmathsquare
-
+1. Install main package with following command `pip install --no-clean git+https://github.com/bkvaiude/zmath.git@main` --no-clean option
+    1. At time of main package installation, new folder created in `/tmp` forlder and repository clone in that folder with gitmodules.
+    1. However on succcessful installtion, `/tmp` folder is deleted as part of pip cache clean up
+    1. As next when you go optional package installtion, you will face a error with gitmodules enabled package installation, as `/tmp` folder has been deleted.
+    1. Solution - use --no-clean option with main pkg installation
 Why Use Git Submodules?
 Version Control: Keep specific versions of submodules tied to specific versions of the main project.
 Development: Allow development on both the main project and submodules simultaneously.
