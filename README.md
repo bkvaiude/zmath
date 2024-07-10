@@ -16,7 +16,7 @@ python setup.py sdist bdist_wheel
 1. Approach with .gitmodules
     1. Checkout to zyrous service repo
     1. add necesaary modules using following command `git submodule add https://github.com/bkvaiude/zmathsquare.git zmath/zmathsquare`
-    1. git submodule update --remote --merge` to fetch latest changes from main, still need to figure out a way for tag version or commit
+    1. `git submodule update --remote --merge` to fetch latest changes from main, still need to figure out a way for tag version or commit
     1. git add and commit those packages that leads new version release of zyrous service
     1. use the zyrous service version in your app or service development
     1. this inforce monorepo kind of implementation with tight coupling and no optional packages
