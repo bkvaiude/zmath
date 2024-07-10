@@ -23,34 +23,11 @@ def gitcmd_update_submodules():
     @returns True if the package is a git repository and the modules were updated.
             False otherwise.
     """
-    print(
-        os.path.join(pathlib.Path(__file__).parent, ".git"),
-        "------------------------------------------",
-        "Running gitcmd_update_submodules",
-    )
 
     if os.path.exists(os.path.join(pathlib.Path(__file__).parent, ".git")):
-        print(
-            "------------------------------------------",
-            "Running gitcmd_update_submodules",
-        )
         check_call(["git", "submodule", "update", "--init", "--recursive"])
         check_call(["git", "submodule", "update", "--remote", "--merge"])
         return True
-
-    # Check if the repository is a Git repository
-    # if os.path.exists(os.path.join(os.path.dirname(__file__), ".git")):
-    #     # Initialize and update the submodules
-    #     run(["git", "submodule", "update", "--init", "--recursive"], check=True)
-
-    #     # Copy the submodule directories to the site-packages directory
-    #     site_packages_dir = os.path.join(os.path.dirname(__file__), "build", "lib")
-    #     for submodule_dir in ["zmathsquare"]:
-    #         src_dir = os.path.join(os.path.dirname(__file__), submodule_dir)
-    #         dst_dir = os.path.join(site_packages_dir, submodule_dir)
-    #         if os.path.exists(dst_dir):
-    #             shutil.rmtree(dst_dir)
-    #         shutil.copytree(src_dir, dst_dir)
 
 
 class gitcmd_develop(develop):
@@ -70,7 +47,6 @@ class gitcmd_install(install):
 
     def run(self):
         gitcmd_update_submodules()
-        print("------------------------------------------", "Running gitcmd_install")
         install.run(self)
 
 
