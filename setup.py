@@ -4,6 +4,8 @@ from setuptools.command.install import install
 from setuptools.command.sdist import sdist
 from setuptools import setup, find_packages
 from subprocess import check_call
+import shutil
+from subprocess import run
 
 VERSION = "0.0.1"
 DESCRIPTION = "Sample Math Operations"
@@ -11,7 +13,7 @@ LONG_DESCRIPTION = "It is just demonstration of how to create python package"
 
 
 def local_package_path(package_name):
-    return "file://localhost/" + os.path.abspath(package_name)
+    return "file://localhost" + os.path.abspath(package_name)
 
 
 def gitcmd_update_submodules():
@@ -36,7 +38,19 @@ def gitcmd_update_submodules():
         check_call(["git", "submodule", "update", "--remote", "--merge"])
         return True
 
-    return False
+    # Check if the repository is a Git repository
+    # if os.path.exists(os.path.join(os.path.dirname(__file__), ".git")):
+    #     # Initialize and update the submodules
+    #     run(["git", "submodule", "update", "--init", "--recursive"], check=True)
+
+    #     # Copy the submodule directories to the site-packages directory
+    #     site_packages_dir = os.path.join(os.path.dirname(__file__), "build", "lib")
+    #     for submodule_dir in ["zmathsquare"]:
+    #         src_dir = os.path.join(os.path.dirname(__file__), submodule_dir)
+    #         dst_dir = os.path.join(site_packages_dir, submodule_dir)
+    #         if os.path.exists(dst_dir):
+    #             shutil.rmtree(dst_dir)
+    #         shutil.copytree(src_dir, dst_dir)
 
 
 class gitcmd_develop(develop):
