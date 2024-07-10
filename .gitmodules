@@ -1,0 +1,3 @@
+[submodule "zmathsquare"]
+	path = zmathsquare
+	url = https://github.com/bkvaiude/zmathsquare.git
