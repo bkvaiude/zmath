@@ -1,6 +1,5 @@
-import os, pathlib
+import os
 from setuptools import setup, find_packages
-from subprocess import check_call
 
 VERSION = "0.0.1"
 DESCRIPTION = "Sample Math Operations"
