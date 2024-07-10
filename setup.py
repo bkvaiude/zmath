@@ -10,6 +10,10 @@ DESCRIPTION = "Sample Math Operations"
 LONG_DESCRIPTION = "It is just demonstration of how to create python package"
 
 
+def local_package_path(package_name):
+    return "file://localhost/" + os.path.abspath(package_name)
+
+
 def gitcmd_update_submodules():
     """Check if the package is being deployed as a git repository. If so, recursively
     update all dependencies.
@@ -79,9 +83,13 @@ setup(
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     packages=find_packages(),
-    install_requires=[],
     keywords=["python", "math"],
+    extras_require={
+        "plus": ["zmathplus @ git+https://github.com/bkvaiude/zmathplus.git"],
+        "square": [f'zmathsquare @ {local_package_path("zmathsquare")}'],
+    },
     classifiers=[
         "mathematics",
     ],
+    entry_points={"zmath_plugins": ["zmath = zmath"]},
 )
