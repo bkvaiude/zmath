@@ -18,3 +18,53 @@ python setup.py install
 Approach 2
 
 pip install dist/zmath-0.0.1.tar.gz
+
+
+Idea
+
+/zmath
+    /setup.py
+    /zmath ------------------> main pkg
+        /__init__.py
+        /add.py
+        /extras
+            /subtract.py
+            /__init__.py
+    /zmathsquare ------------------> as gitmodule
+        /__init__.py
+        /square.py
+        /extras
+            /__init__.py
+            /square_root.py
+    /zmathplus ------------------> as package
+        /__init__.py
+        /multiply.py 
+        /extras
+            /__init__.py
+            /divide.py
+
+Demo 1
+Install zmath 
+Perform needful ops to install gitmodule
+Install plus pkg 
+Write test cases and validate
+
+Demo 2
+Install zmath 
+Skip - Perform needful ops to install gitmodule
+Install plus pkg 
+Write test cases and validate
+
+Demo 3
+Install zmath 
+Perform needful ops to install gitmodule
+Install plus pkg 
+add module has dependancies on plus pkg
+Write test cases and validate
+
+Demo 4
+Install zmath 
+Perform needful ops to install gitmodule
+Skip - Install plus pkg 
+add module has dependancies on plus pkg
+Write test cases and validate
