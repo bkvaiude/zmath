@@ -24,7 +24,10 @@ python setup.py sdist bdist_wheel
     1. tedious process to remove a submodule, as above approach only help to skip but installation will happen and it will impact on storage space
     1. setup.py of main.pkg only works if the submodule exists on the disk, else it will fail
     1. tried experimenting with setup.py with custom install command but that d'dn't work with pip install, need more time for investigation
-    1. 
+1. Git module cleanup
+    1. rm -rf zmathsquare
+    1. rm -rf .git/modules/zmathsquare
+    1. git rm --cached zmathsquare
 
 Why Use Git Submodules?
 Version Control: Keep specific versions of submodules tied to specific versions of the main project.
