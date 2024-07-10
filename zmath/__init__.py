@@ -10,4 +10,3 @@ for entry_point in pkg_resources.iter_entry_points("zmath_plugins"):
 
 
 from .add import add
-from .subtract import substract
