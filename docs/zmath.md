@@ -87,3 +87,23 @@ zmath
     │   └── square_root.py
     └── square.py
 ```
+
+## Installation
+
+Install the `zmath` main package
+
+```
+pip install --no-clean git+https://github.com/bkvaiude/zmath.git@main
+```
+
+Install the optional packages like `zmathsquare` and `zmathplus`
+
+```
+pip install zmath[square]
+
+pip install zmath[plus]
+
+pip install zmath[square,plus]
+```
+
+Take note [setup.py](https://github.com/bkvaiude/zmath/blob/main/setup.py) file and extra_requires parameter to get more understanding.

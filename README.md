@@ -1,4 +1,6 @@
-# Sample Python Package Demo
+# [Latest Docs](https://github.com/bkvaiude/zmath/blob/main/docs/zmath.md)
+
+# Outdated docs - WARNING! - Ignore following content
 
 # Learnings
 
