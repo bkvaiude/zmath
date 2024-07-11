@@ -17,8 +17,8 @@ def test_add():
     assert add(-1, -2) == -3
 
 
-def test_substract():
-    assert subtract.substract(1, 2) == -1
+def test_subtract():
+    assert subtract.subtract(1, 2) == -1
 
 
 def test_multiply():
@@ -40,7 +40,7 @@ def test_divide():
 
 def test_zmath():
     test_add()
-    test_substract()
+    test_subtract()
     test_multiply()
     test_divide()
     test_sq()
