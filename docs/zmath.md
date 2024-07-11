@@ -7,8 +7,8 @@ This Proof of Concept (POC) demonstrates various packages and scenarios in a mod
 ### Packages
 
 - **zmath**: The main package providing basic functionality like addition and subtraction.
-- **zmathplus**: A submodule of the zmath package, added using the `.gitmodules` approach. It provides multiplication and division functionality. This is an optional package, installed with `pip install zmath[plus]`.
-- **zmathsquare**: Another package related to zmath, but maintained as an external package in a separate repository. It provides square and square root functionality. This is also an optional package, installed with `pip install zmath[square]`.
+- **zmathsquare**: A submodule of the zmath package, added using the `.gitmodules` approach. It provides square and square root functionality. This is an optional package, installed with `pip install zmath[square]`.
+- **zmathplus**: Another package related to zmath, but maintained as an external package in a separate repository.It provides multiplication and division functionality. This is also an optional package, installed with `pip install zmath[plus]`.
 
 ### POC Scenarios
 
